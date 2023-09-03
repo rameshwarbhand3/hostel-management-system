@@ -15,12 +15,12 @@ can also raise concerns if they stumble across any problems during the whole pro
 5. MySql
 
 
-## Procedure
+## How to run
 1. Clone the Project to a suitable location.
-2. Open Eclipse IDE and import the Back-End folder as an existing Maven project.
+2. Open Eclipse IDE and import the `backend` folder as an existing Maven project.
 3. Change the username and password of MySql according to your system in application properties.
 4. Run the project.
-5. Open Front-End folder in Visual Studio code.
+5. Open `frontend` folder in Visual Studio code.
 6. Open a terminal and type `npm install` and `npm start`.
 
 
