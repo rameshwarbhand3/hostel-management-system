@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.ram.hms.dto.RoomDto;
-import com.ram.hms.model.Hostel;
-import com.ram.hms.model.Room;
+import com.ram.hms.entity.Hostel;
+import com.ram.hms.entity.Room;
 import com.ram.hms.repository.HostelRepository;
 import com.ram.hms.repository.RoomRepository;
 

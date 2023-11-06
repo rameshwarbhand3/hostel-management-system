@@ -1,4 +1,4 @@
-package com.ram.hms.model;
+package com.ram.hms.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,29 +22,23 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "admins")
-public class Admin {
+@Table(name = "rooms")
+public class Room {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
+	@Column(unique = true)
+	private int roomNo;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private User user;
+	private byte isVacant = 1;
 	
-	private String department;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "hostel_id", referencedColumnName ="id" )
+	private Hostel hostel;
 	
-	@Column(name = "emp_id")
-	private String empId;
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "room")
+	private Student student;
 	
-	@Column(name = "email_id")
-	private String emailId;
-	
-	@Column(name = "mobile_no")
-	private long mobileNo;	
-	
-	private String designation;
-	
-	
+
 }

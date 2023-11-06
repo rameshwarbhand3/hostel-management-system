@@ -1,6 +1,6 @@
 package com.ram.hms.repository;
 
-import com.ram.hms.model.User;
+import com.ram.hms.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

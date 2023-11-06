@@ -5,6 +5,7 @@ import java.util.List;
 import com.ram.hms.dto.ConcernDto;
 import com.ram.hms.dto.RoomDto;
 import com.ram.hms.dto.StudentDto;
+import com.ram.hms.model.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,7 +21,7 @@ import com.ram.hms.dto.AdminDto;
 import com.ram.hms.dto.HostelDto;
 import com.ram.hms.dto.PaymentDto;
 import com.ram.hms.dto.UserDto;
-import com.ram.hms.payload.ApiResponse;
+import com.ram.hms.model.AuthResponse;
 import com.ram.hms.service.AdminServiceImpl;
 import com.ram.hms.service.ConcernServiceImpl;
 import com.ram.hms.service.HostelServiceImpl;
@@ -69,13 +70,13 @@ public class AdminController {
 	@PostMapping("/hostel/add")
     public ResponseEntity<?> addHostel(@RequestBody HostelDto hostelDto) {
 		hostelServiceImpl.addHostel(hostelDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel added successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel added successfully"));
     }
 	
 	@PutMapping("/hostel/update")
     public ResponseEntity<?> updateHostel(@RequestBody HostelDto hostelDto) throws Exception {
 		hostelServiceImpl.updateHostel(hostelDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel updated successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel updated successfully"));
     }
 	
 	@GetMapping("/hostels/display")
@@ -91,13 +92,13 @@ public class AdminController {
 	@DeleteMapping("/hostel/delete")
     public ResponseEntity<?> deleteHostel(@RequestBody HostelDto hostelDto) {
 		hostelServiceImpl.deleteHostel(hostelDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel deleted successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Hostel deleted successfully"));
     }
 	
 	@PostMapping("/room/add")
     public ResponseEntity<?> addRoom(@RequestBody RoomDto roomDto) throws Exception {
 		roomServiceImpl.addRoomToHostel(roomDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Room added successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Room added successfully"));
     }
 	
 	@GetMapping("/rooms/display")
@@ -109,13 +110,13 @@ public class AdminController {
 	@PutMapping("/room/update")
     public ResponseEntity<?> updateRoom(@RequestBody RoomDto roomDto) {
 		roomServiceImpl.updateRoom(roomDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Room updated successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Room updated successfully"));
     }
 	
 	@DeleteMapping("/room/delete")
     public ResponseEntity<?> deleteRoom(@RequestBody RoomDto roomDto) {
 		roomServiceImpl.deleteRoom(roomDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Room deleted successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Room deleted successfully"));
     }
 	
 	@GetMapping("/concerns/display")
@@ -131,7 +132,7 @@ public class AdminController {
 	@PutMapping("/add")
 	public ResponseEntity<?> addAdmin(@RequestBody AdminDto adminDto) {	
 		adminServiceImpl.addAdmin(adminDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Admin registered successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Admin registered successfully"));
     }
 	
 	@GetMapping("/update")
@@ -142,7 +143,7 @@ public class AdminController {
 	@PutMapping("/update")
 	public ResponseEntity<?> updateAdmin(@RequestBody AdminDto adminDto) {	
 		adminServiceImpl.updateAdmin(adminDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Updated Admin successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Updated Admin successfully"));
     }
 	
 	@GetMapping("/payment/display")

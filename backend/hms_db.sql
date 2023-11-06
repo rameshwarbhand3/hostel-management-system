@@ -131,7 +131,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO `users` VALUES (1,'Ram','Bhand','b8c5ee5caf580c372178c399ceb3ef3ba35b0a8eb4fb708c164bbf43bd5b3c404a5c1f82b594590b','ram');
 
@@ -144,7 +144,9 @@ DROP TABLE IF EXISTS `users_roles`;
 CREATE TABLE `users_roles` (
   `user_id` bigint NOT NULL,
   `role_id` bigint NOT NULL,
+  PRIMARY KEY (`user_id`,`role_id`),
   KEY `FKj6m8fwv7oqv74fcehir1a9ffy` (`role_id`),
-  KEY `FK2o0jvgh89lemvvo17cbqvdxaa` (`user_id`)
-);
+  CONSTRAINT `FK2o0jvgh89lemvvo17cbqvdxaa` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `FKj6m8fwv7oqv74fcehir1a9ffy` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

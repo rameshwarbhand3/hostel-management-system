@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.ram.hms.dto.StudentDto;
-import com.ram.hms.model.Payment;
-import com.ram.hms.model.Room;
-import com.ram.hms.model.Student;
-import com.ram.hms.model.User;
-import com.ram.hms.payload.AllotmentStatus;
-import com.ram.hms.payload.BookingStatus;
+import com.ram.hms.entity.Payment;
+import com.ram.hms.entity.Room;
+import com.ram.hms.entity.Student;
+import com.ram.hms.entity.User;
+import com.ram.hms.model.AllotmentStatus;
+import com.ram.hms.model.BookingStatus;
 import com.ram.hms.repository.PaymentRepository;
 import com.ram.hms.repository.RoomRepository;
 import com.ram.hms.repository.StudentRepository;

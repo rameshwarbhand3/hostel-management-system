@@ -1,6 +1,4 @@
-package com.ram.hms.payload;
-
-import java.util.List;
+package com.ram.hms.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class JwtAuthenticationResponse {	
-    private String jwtToken;
-    private List<String> roles;   
+public class BookingStatus {	
+	private int roomId;
+	private String transactionId;
 }

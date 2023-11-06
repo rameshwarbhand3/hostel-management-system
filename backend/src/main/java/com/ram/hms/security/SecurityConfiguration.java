@@ -17,9 +17,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfiguration {
 	
 	
-    private JwtFilter jwtFilter;    
+    private JwtTokenFilter jwtFilter;
 	
-	public SecurityConfiguration(JwtFilter jwtFilter) {		
+	public SecurityConfiguration(JwtTokenFilter jwtFilter) {
 		this.jwtFilter = jwtFilter;
 	}
 	
@@ -37,15 +37,6 @@ public class SecurityConfiguration {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
-		.cors().and()
-		.csrf().disable()
-		.authorizeRequests()
-		.and()
-		.exceptionHandling()
-		.and()
-		.sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
         .authorizeRequests()
         .antMatchers("/signin","/signup").permitAll()
         .antMatchers("/student/**").hasRole("STUDENT")       

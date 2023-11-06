@@ -1,9 +1,11 @@
 package com.ram.hms.service;
 
 import com.ram.hms.dto.UserDto;
-import com.ram.hms.payload.SignUpRequest;
+import com.ram.hms.entity.User;
 
 public interface IUserService{	
-	void saveUser(SignUpRequest signUpRequest);			
+
+	User save(User user);
 	UserDto getUser();
+
 }

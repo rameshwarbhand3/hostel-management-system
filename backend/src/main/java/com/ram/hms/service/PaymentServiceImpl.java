@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.ram.hms.dto.PaymentDto;
-import com.ram.hms.model.Payment;
+import com.ram.hms.entity.Payment;
 import com.ram.hms.repository.PaymentRepository;
 
 @Service

@@ -1,8 +1,7 @@
-package com.ram.hms.model;
-
-import java.sql.Date;
+package com.ram.hms.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,17 +21,29 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "payments")
-public class Payment {
+@Table(name = "admins")
+public class Admin {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	private String transactionId;
-	private String transactionStatus;
-	private Date transactionDate;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "student_id")
-	private Student student;
+	@JoinColumn(name = "user_id")
+	private User user;
+	
+	private String department;
+	
+	@Column(name = "emp_id")
+	private String empId;
+	
+	@Column(name = "email_id")
+	private String emailId;
+	
+	@Column(name = "mobile_no")
+	private long mobileNo;	
+	
+	private String designation;
+	
+	
 }

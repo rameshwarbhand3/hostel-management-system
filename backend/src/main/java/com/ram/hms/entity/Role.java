@@ -1,4 +1,4 @@
-package com.ram.hms.model;
+package com.ram.hms.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,5 +25,8 @@ public class Role {
 	private Long id;
 	@Column(nullable = false, unique = true)
     private String name;
-   
+
+	public Role(String name) {
+		this.name = name;
+	}
 }

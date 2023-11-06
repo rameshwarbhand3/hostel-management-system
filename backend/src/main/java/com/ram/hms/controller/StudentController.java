@@ -6,6 +6,7 @@ import com.ram.hms.dto.ConcernDto;
 import com.ram.hms.dto.HostelDto;
 import com.ram.hms.dto.RoomDto;
 import com.ram.hms.dto.StudentDto;
+import com.ram.hms.model.ApiResponse;
 import com.ram.hms.service.ConcernServiceImpl;
 import com.ram.hms.service.HostelServiceImpl;
 import com.ram.hms.service.RoomServiceImpl;
@@ -21,9 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ram.hms.dto.UserDto;
-import com.ram.hms.payload.AllotmentStatus;
-import com.ram.hms.payload.ApiResponse;
-import com.ram.hms.payload.BookingStatus;
+import com.ram.hms.model.AllotmentStatus;
+import com.ram.hms.model.AuthResponse;
+import com.ram.hms.model.BookingStatus;
 import com.ram.hms.service.StudentServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -59,7 +60,7 @@ public class StudentController {
 	@PutMapping("/register")
 	public ResponseEntity<?> addStudent(@RequestBody StudentDto studentDto) {
 		studentServiceImpl.addStudent(studentDto);
-		return ResponseEntity.ok().body(new ApiResponse(true,"Student registered successfully"));	
+		return ResponseEntity.ok().body(new ApiResponse(true,"Student registered successfully"));
 	}
 	
 	@GetMapping("/update")
@@ -70,7 +71,7 @@ public class StudentController {
 	@PutMapping("/update")
 	public ResponseEntity<?> updateStudent(@RequestBody StudentDto studentDto) {	
 		studentServiceImpl.updateStudent(studentDto);
-		return ResponseEntity.ok().body(new ApiResponse(true,"Student updated successfully"));	
+		return ResponseEntity.ok().body(new ApiResponse(true,"Student updated successfully"));
 	}
 	
 	@GetMapping("/hostels/display")
@@ -87,14 +88,14 @@ public class StudentController {
 	@PostMapping("/concern/add")
 	public ResponseEntity<?> addConcern(@RequestBody ConcernDto concernDto) {
 		concernServiceImpl.addConcern(concernDto);
-    	return ResponseEntity.ok().body(new ApiResponse(true, "Concern posted successfully")); 
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Concern posted successfully"));
     }
 	
 	@PostMapping("/book")
 	public ResponseEntity<?> bookRoom(@RequestBody BookingStatus bookingStatus) {
 		System.out.println(bookingStatus);
 		if(studentServiceImpl.bookRoom(bookingStatus))
-    		return ResponseEntity.ok().body(new ApiResponse(true, "Payment is successful")); 
+    		return ResponseEntity.ok().body(new ApiResponse(true, "Payment is successful"));
     	else
     		return ResponseEntity.ok().body(new ApiResponse(false, "Failed to make Payment"));
     }

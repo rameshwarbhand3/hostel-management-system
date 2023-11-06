@@ -1,4 +1,4 @@
-package com.ram.hms.payload;
+package com.ram.hms.model;
 
 import javax.validation.constraints.NotBlank;
 
@@ -7,13 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SignUpRequest {
-	@NotBlank
-	private String firstName;
-	@NotBlank
-	private String lastName;
+public class AuthRequest {
 	@NotBlank
 	private String userName;
 	@NotBlank
 	private String password;
+
+
+
 }

@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.ram.hms.dto.ConcernDto;
-import com.ram.hms.model.Concern;
-import com.ram.hms.model.Student;
-import com.ram.hms.model.User;
+import com.ram.hms.entity.Concern;
+import com.ram.hms.entity.Student;
+import com.ram.hms.entity.User;
 import com.ram.hms.repository.ConcernRepository;
 import com.ram.hms.repository.StudentRepository;
 import com.ram.hms.repository.UserRepository;

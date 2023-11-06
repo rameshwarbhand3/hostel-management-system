@@ -1,4 +1,4 @@
-package com.ram.hms.model;
+package com.ram.hms.entity;
 
 import java.util.ArrayList;
 import java.util.List;

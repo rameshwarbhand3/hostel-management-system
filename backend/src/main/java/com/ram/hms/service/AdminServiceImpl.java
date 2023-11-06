@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.ram.hms.dto.AdminDto;
-import com.ram.hms.model.Admin;
-import com.ram.hms.model.User;
+import com.ram.hms.entity.Admin;
+import com.ram.hms.entity.User;
 import com.ram.hms.repository.AdminRepository;
 import com.ram.hms.repository.UserRepository;
 

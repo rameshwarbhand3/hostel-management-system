@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.ram.hms.dto.HostelDto;
-import com.ram.hms.model.Hostel;
+import com.ram.hms.entity.Hostel;
 import com.ram.hms.repository.HostelRepository;
 
 @Service

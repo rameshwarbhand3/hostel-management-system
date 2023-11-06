@@ -1,10 +1,10 @@
 package com.ram.hms.repository;
 
-import com.ram.hms.model.Student;
+import com.ram.hms.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ram.hms.model.Payment;
+import com.ram.hms.entity.Payment;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
